@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyTaskApp</string>
+    <string name="tv_hello_with_text">Hello %1$s</string>
+</resources>
