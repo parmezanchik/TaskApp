@@ -25,8 +25,7 @@ class MainFragment : Fragment() {
 
         val buttonShowList: Button = view.findViewById(R.id.buttonShowList)
         buttonShowList.setOnClickListener {
-            val navController = findNavController()
-            navController.navigate(R.id.action_mainFragment_to_textListFragment)
+            findNavController().navigate(R.id.action_mainFragment_to_textListFragment)
         }
     }
 }
