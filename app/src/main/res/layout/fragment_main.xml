@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <!-- Here you can define any variables for Data Binding -->
+        <!-- Тут можна додати змінні для Data Binding -->
     </data>
 
     <LinearLayout
@@ -34,7 +34,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello"
+            android:text=""
             android:textSize="18sp"
             android:layout_marginTop="16dp" />
 
@@ -44,5 +44,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:navGraph="@navigation/my_nav" />
+
     </LinearLayout>
 </layout>
