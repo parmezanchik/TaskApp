@@ -9,21 +9,20 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mytaskapp.R
 import com.example.mytaskapp.data.dp.entity.TextEntity
+import com.example.mytaskapp.databinding.ItemTextBinding
 
 class TextAdapter : ListAdapter<TextEntity, TextAdapter.TextViewHolder>(TextDiffCallback()) {
 
-    class TextViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val textView: TextView = itemView.findViewById(R.id.textView)
+    class TextViewHolder(private val binding: ItemTextBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(textEntity: TextEntity?) {
-            textView.text = textEntity?.text
+            binding.textView.text = textEntity?.text
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_text, parent, false)
-        return TextViewHolder(view)
+        val binding = ItemTextBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return TextViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: TextViewHolder, position: Int) {
