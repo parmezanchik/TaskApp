@@ -13,10 +13,17 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setupViewBinding()
+        setupNavController()
+    }
+
+    private fun setupViewBinding() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+    }
 
+    private fun setupNavController() {
         navControllerMain = Navigation.findNavController(this, R.id.nav_host_fragment)
-
     }
 }
+

@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/textListFragment"
-        android:name="com.example.mytaskapp.recyclerview.TextListFragment"
+        android:name="com.example.mytaskapp.ui.main.TextListFragment"
         android:label="TextListFragment">
 
     </fragment>
