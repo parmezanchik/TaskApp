@@ -11,6 +11,10 @@ interface TextDao {
     @Insert
     suspend fun insert(text: TextEntity)
 
+    @Query("SELECT * FROM text_table ORDER BY id DESC")
+    fun getAllTexts(): LiveData<List<TextEntity>>
+
     @Query("SELECT * FROM text_table ORDER BY id DESC LIMIT 1")
     fun getLastText(): LiveData<TextEntity>
 }
+

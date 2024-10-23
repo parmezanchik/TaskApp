@@ -2,37 +2,28 @@ package com.example.mytaskapp.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.example.mytaskapp.R
 import com.example.mytaskapp.databinding.ActivityMainBinding
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val viewModel: TextViewModel by viewModel()
+    private lateinit var navControllerMain: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-        setListener()
-        observe()
+        setupViewBinding()
+        setupNavController()
     }
 
-    private fun observe() {
-        with(viewModel) {
-            lastText.observe(this@MainActivity) { textEntity ->
-                binding.textView.text = getString(R.string.tv_hello_with_text, textEntity?.text)
-            }
-        }
+    private fun setupViewBinding() {
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 
-    private fun setListener() {
-        with(binding) {
-            button.setOnClickListener {
-                val inputText = binding.editText.text.toString()
-                viewModel.insertText(inputText)
-            }
-        }
+    private fun setupNavController() {
+        navControllerMain = Navigation.findNavController(this, R.id.nav_host_fragment)
     }
 }
+

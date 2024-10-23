@@ -18,7 +18,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildFeatures {
-        dataBinding = true
+        viewBinding = true
     }
     buildTypes {
         release {
@@ -67,6 +67,8 @@ dependencies {
     implementation("io.insert-koin:koin-androidx-workmanager:3.4.0")
     implementation("io.insert-koin:koin-androidx-navigation:3.4.0")
 
+    implementation("androidx.navigation:navigation-fragment-ktx:2.8.2")
+    implementation("androidx.navigation:navigation-ui-ktx:2.8.2")
 
 
     // Testing dependencies
